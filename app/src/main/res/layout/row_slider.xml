@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="callback"
+            type="com.example.assignment.di.base.adapter.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="holder"
+            type="com.example.assignment.di.base.adapter.SimpleRecyclerViewAdapter.SimpleViewHolder" />
+
+        <variable
+            name="bean"
+            type="com.example.assignment.data.beans.Result" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <ImageView
+            android:id="@+id/imgBanner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

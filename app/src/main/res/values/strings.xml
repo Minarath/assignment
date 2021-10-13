@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Assignment</string>
+
+    <!--Error handle-->
+    <string name="error_found">Error</string>
+    <string name="network_error">Network error</string>
+    <string name="plz_wait">Please wait</string>
+
+</resources>

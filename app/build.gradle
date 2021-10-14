@@ -113,5 +113,7 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
 
+    //transformation layout
+    implementation "com.github.skydoves:transformationlayout:1.1.0"
 
 }

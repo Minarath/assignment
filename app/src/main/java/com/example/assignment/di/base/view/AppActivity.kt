@@ -6,6 +6,8 @@ import android.widget.Toast
 import androidx.databinding.ViewDataBinding
 import com.example.assignment.di.base.viewmodel.BaseViewModel
 import com.example.assignment.di.base.viewmodel.SingleMessageEvent
+import com.skydoves.transformationlayout.TransformationCompat.onTransformationStartContainer
+import com.skydoves.transformationlayout.onTransformationStartContainer
 
 abstract class AppActivity<B : ViewDataBinding?, V : BaseViewModel?> : BaseActivity<B, V>() {
 
@@ -13,6 +15,7 @@ abstract class AppActivity<B : ViewDataBinding?, V : BaseViewModel?> : BaseActiv
     protected val TAG = this.javaClass.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        onTransformationStartContainer(this)
         super.onCreate(savedInstanceState)
         subscribeBaseEvents()
     }

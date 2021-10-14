@@ -36,6 +36,7 @@ class SimpleRecyclerViewAdapter<M, B : ViewDataBinding> :
     }
 
     interface SimpleCallback<B : ViewDataBinding, M> {
+        fun onItemClick(v: View) {}
         fun onItemClick(v: View, m: M) {}
         fun onItemClick(v: View, m: M, pos: Int) {}
         fun onPositionClick(v: View, pos: Int) {}

@@ -2,6 +2,7 @@ package com.example.assignment.data.beans
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Result(
     @SerializedName("adult")
@@ -29,7 +30,9 @@ data class Result(
     @SerializedName("video")
     var video: Boolean? = null,
     @SerializedName("vote_average")
-    var voteAverage: Double? = null,
+    var voteAverage: Double? = 0.0,
     @SerializedName("vote_count")
-    var voteCount: Int? = null
-)
+    var voteCount: Int? = null,
+    var ratting: Float? = 0F
+
+) : Serializable

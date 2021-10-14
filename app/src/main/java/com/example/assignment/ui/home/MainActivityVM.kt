@@ -15,24 +15,24 @@ class MainActivityVM @Inject constructor(
     private val networkErrorHandler: NetworkErrorHandler
 ) : BaseViewModel() {
 
-    val obrUserInfo = SingleRequestEvent<Data>()
+    val obrSliderItem = SingleRequestEvent<Data>()
 
-        fun getTopRatedList(page: Int) {
-        dashRepo.getTopRatedListAsync(1, object : ApiCallback<Response<Data>>() {
+    fun getTopRatedList(page: Int) {
+        dashRepo.getTopRatedListAsync(page, object : ApiCallback<Response<Data>>() {
             override fun onSuccess(response: Response<Data>) {
-                obrUserInfo.value = Resource.success(response.body(), "Ok")
+                obrSliderItem.value = Resource.success(response.body(), "Ok")
             }
 
             override fun onFailed(message: String) {
-                obrUserInfo.value = Resource.error(null, message)
+                obrSliderItem.value = Resource.error(null, message)
             }
 
             override fun onErrorThrow(exception: Exception) {
-                obrUserInfo.value = Resource.error(null, networkErrorHandler.getErrMsg(exception))
+                obrSliderItem.value = Resource.error(null, networkErrorHandler.getErrMsg(exception))
             }
 
             override fun onLoading() {
-                obrUserInfo.value = Resource.loading(null, "")
+                obrSliderItem.value = Resource.loading(null, "")
             }
         })
     }

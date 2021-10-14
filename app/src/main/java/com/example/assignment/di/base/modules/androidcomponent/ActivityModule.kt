@@ -1,5 +1,6 @@
 package com.example.assignment.di.base.modules.androidcomponent
 
+import com.example.assignment.ui.detail.DetailActivity
 import com.example.assignment.ui.home.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -8,5 +9,8 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityModule {
     @ContributesAndroidInjector
     abstract fun mainActivity(): MainActivity
+
+    @ContributesAndroidInjector
+    abstract fun detailActivity(): DetailActivity
 
 }

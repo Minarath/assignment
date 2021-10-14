@@ -9,5 +9,5 @@ import retrofit2.http.*
 
 interface DashApi {
     @GET(EndPoints.Home.topRated)
-    fun getTopRatedListAsync(): Deferred<Response<Data>>
+    fun getTopRatedListAsync(@Query("page") page: Int): Deferred<Response<Data>>
 }

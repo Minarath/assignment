@@ -18,6 +18,8 @@ import com.example.assignment.data.remote.spinner.SpinnerLoader;
 import com.example.assignment.data.repo.dash.DashRepo;
 import com.example.assignment.di.base.MyApplication;
 import com.example.assignment.di.base.viewmodel.BaseViewModel;
+import com.example.assignment.ui.detail.TransformationAppCompatActivity;
+import com.skydoves.transformationlayout.TransformationCompat;
 
 import java.util.Objects;
 
@@ -25,7 +27,7 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
 
-public abstract class BaseActivity<B extends ViewDataBinding, V extends BaseViewModel> extends DaggerAppCompatActivity {
+public abstract class BaseActivity<B extends ViewDataBinding, V extends BaseViewModel> extends TransformationAppCompatActivity {
     @Inject
     public ViewModelProvider.Factory viewModelFactory;
     protected V viewModel;
@@ -42,6 +44,7 @@ public abstract class BaseActivity<B extends ViewDataBinding, V extends BaseView
     @CallSuper
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TransformationCompat.onTransformationStartContainer(this);
         super.onCreate(savedInstanceState);
         Objects.requireNonNull(MyApplication.getInstance()).setCurrentActivity(this);
         Objects.requireNonNull(MyApplication.getInstance()).setAuthRepo(dashRepo);

@@ -13,7 +13,7 @@ class DashRepoImpl(private val dashApi: DashApi) : DashRepo {
     override fun getTopRatedListAsync(page: Int, apiCallback: ApiCallback<Response<Data>>) {
         apiCallback.onLoading()
         CoroutineScope(Dispatchers.IO).launch {
-            val request = dashApi.getTopRatedListAsync()
+            val request = dashApi.getTopRatedListAsync(page)
             withContext(Dispatchers.Main) {
                 try {
                     val response = request.await()
